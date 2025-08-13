@@ -1,0 +1,390 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+header i {
+    margin-right: 10px;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form styles */
+.age-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-field input,
+.input-field select {
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.input-field input:invalid,
+.input-field select:invalid {
+    border-color: #e74c3c;
+}
+
+.input-field input:valid,
+.input-field select:valid {
+    border-color: #27ae60;
+}
+
+/* Error message styles */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    min-height: 16px;
+    display: block;
+}
+
+/* Button styles */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #545b62;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(108, 117, 125, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Result container styles */
+.result-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    animation: fadeInUp 0.5s ease;
+}
+
+.result-header h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.age-display {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.age-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+    min-width: 120px;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+}
+
+.age-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.age-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.additional-info {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    color: #666;
+}
+
+.additional-info p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Error container styles */
+.error-container {
+    background: rgba(231, 76, 60, 0.1);
+    border: 2px solid #e74c3c;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: shake 0.5s ease;
+}
+
+.error-content {
+    color: #e74c3c;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.error-content i {
+    font-size: 1.2rem;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 30px;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .age-form {
+        padding: 20px;
+    }
+    
+    .input-group {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .age-display {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .age-item {
+        min-width: 100px;
+    }
+    
+    .age-number {
+        font-size: 2rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .age-form,
+    .result-container {
+        padding: 15px;
+    }
+    
+    .age-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .input-field input,
+    .input-field select {
+        border-width: 3px;
+    }
+    
+    .btn {
+        border: 2px solid transparent;
+    }
+    
+    .btn-primary {
+        border-color: #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    .age-form,
+    .result-container {
+        background: white;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .btn {
+        display: none;
+    }
+}
